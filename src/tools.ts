@@ -247,7 +247,7 @@ export function callService(deps: Deps, args: CallArgs): Promise<ToolResult> {
     if (settings.problems.length > 0) {
       return refuse(
         'SETTINGS_INVALID',
-        `The server's settings need fixing. Nothing was signed.`,
+        `The server's settings need fixing: ${settings.problems.join(' ')} Nothing was signed.`,
         false,
         { problems: settings.problems },
       );
